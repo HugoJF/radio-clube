@@ -1,0 +1,53 @@
+<NotepadPlus>
+    <Project name="Radio Clube">
+        <Folder name="Model">
+            <File name="application\models\radioc_model.php" />
+        </Folder>
+        <Folder name="Controller">
+            <File name="application\controllers\control_panel.php" />
+            <File name="application\controllers\dashboard.php" />
+            <File name="application\controllers\login.php" />
+            <File name="application\controllers\logout.php" />
+            <File name="application\controllers\main.php" />
+            <File name="application\controllers\presence.php" />
+            <File name="application\controllers\register.php" />
+            <File name="application\controllers\ajax.php" />
+            <File name="application\controllers\games.php" />
+        </Folder>
+        <Folder name="Configs">
+            <File name="application\config\autoload.php" />
+            <File name="application\config\config.php" />
+            <File name="application\config\constants.php" />
+            <File name="application\config\database.php" />
+            <File name="application\config\doctypes.php" />
+            <File name="application\config\foreign_chars.php" />
+            <File name="application\config\hooks.php" />
+            <File name="application\config\ion_auth.php" />
+            <File name="application\config\migration.php" />
+            <File name="application\config\mimes.php" />
+            <File name="application\config\profiler.php" />
+            <File name="application\config\routes.php" />
+            <File name="application\config\smileys.php" />
+            <File name="application\config\user_agents.php" />
+        </Folder>
+        <Folder name="Helpers">
+            <File name="application\helpers\authorization_helper.php" />
+        </Folder>
+        <Folder name="Views">
+            <File name="application\views\control_panel_list_view.php" />
+            <File name="application\views\control_panel_view.php" />
+            <File name="application\views\dashboard_view.php" />
+            <File name="application\views\games_detail_view.php" />
+            <File name="application\views\header.php" />
+            <File name="application\views\login_view.php" />
+            <File name="application\views\message.php" />
+            <File name="application\views\notificator_view.php" />
+            <File name="application\views\presence_view.php" />
+            <File name="application\views\register_view.php" />
+            <File name="application\views\token_view.php" />
+            <File name="application\views\with_token_register_view.php" />
+            <File name="application\views\without_token_register_view.php" />
+            <File name="application\views\footer.php" />
+        </Folder>
+    </Project>
+</NotepadPlus>

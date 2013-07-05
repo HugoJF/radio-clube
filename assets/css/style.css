@@ -1,0 +1,43 @@
+.thumbnail-games {
+	margin-bottom: 20px;
+	background: #eee;
+	border-radius: 7px;
+	border: 1px solid #ddd;
+	-webkit-box-sizing: border-box;
+	-webkit-transition: all 0.2s ease-in-out;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+	padding: 4px;
+	background-clip: content-box;
+}
+
+.thumbnail-games:hover {
+	border-color: #0088cc;
+}
+
+.schedule-game .unschedule {
+	display: none;
+}
+
+.schedule-game:hover .schedule {
+	display: none;
+}
+
+.schedule-game:hover .unschedule {
+	display: inline-block;
+}
+.hidden-notification {
+	display:none;
+}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
