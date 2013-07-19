@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH'))
+<?php if(! defined('BASEPATH'))
 	exit('No direct script access allowed');
 
 	class Dashboard extends CI_Controller {
@@ -10,9 +10,7 @@
 			$the_user = $this->ion_auth->user()->row();
 
 			$this->load->view('header');
-			$this->load->view('dashboard_view', array(
-				'available_games' => $this->radioc_model->get_games_24h()
-			));
+			$this->load->view('dashboard_view', array('available_games' => $this->radioc_model->get_games_24h()));
 			$this->load->view('footer');
 		}
 	}

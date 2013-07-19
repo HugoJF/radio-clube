@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH'))
+<?php if(! defined('BASEPATH'))
 	exit('No direct script access allowed');
 
 	class Games extends CI_Controller {
@@ -15,15 +15,12 @@
 			//Verify access
 			verify_access(1);
 
-			if ($id == -1)
+			//No id set
+			if($id == - 1)
 				redirect('dashboard', 'refresh');
 
 			$this->load->view('header');
-			$this->load->view('games_detail_view', array(
-				'game'           => $this->radioc_model->get_game($id),
-				'game_presences' => $this->radioc_model->get_presences_from_game($id)
-			));
+			$this->load->view('games_detail_view', array('game'           => $this->radioc_model->get_game($id),
+														 'game_presences' => $this->radioc_model->get_presences_from_game($id)));
 		}
 	}
-
-?>
