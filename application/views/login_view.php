@@ -62,16 +62,15 @@
   <body>
     <div class="container">
 
-      <form method="POST" action="<?php echo base_url('login/');?>" class="form-signin">
+      <form method="POST" action="<?php echo base_url('login');?>" class="form-signin">
         <h2 class="form-signin-heading">Login</h2>
 		<p class="text-warning"><?php echo $this->session->flashdata('message');?></p>
 		<p class="text-error"><?php echo $this->session->flashdata('error');?></p>
 		
 		<?php if(form_error('identity') !== '') echo form_error('identity'); ?>
-        <input name="identity"type="text" class="input-block-level" placeholder="<?php echo $this->lang->line('login_email'); ?>">
-		
-		<?php if(form_error('password') !== '') echo form_error('password'); ?>
-        <input name="password" type="password" class="input-block-level" placeholder="<?php echo $this->lang->line('login_password'); ?>">
+        <input name="identity"type="text" class="input-block-level" placeholder="<?php echo $this->lang->line('login_rid'); ?>">
+
+        <input name="password" type="password" class="input-block-level" value="password" placeholder="<?php echo $this->lang->line('login_password'); ?>">
 		
         <button class="btn btn-large btn-primary" type="submit"><?php echo $this->lang->line('login_signin'); ?></button>
         <a href="<?php echo base_url() ?>register"><button style="margin-left:30px;" type="button" class="btn btn-large btn-success"><?php echo $this->lang->line('login_register'); ?></button></a>

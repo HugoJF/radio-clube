@@ -24,7 +24,7 @@
 						$user = $CI->radioc_model->get_user($presence->id_user)->first_row();
 						?>
 						<li><?php if (isset($user->username)) {
-								echo $user->username;
+								echo $user->first_name . ' ' . $user->last_name . (($user->rid != '') ? '(' . $user->rid . ')' : '');
 							} else {
 								echo 'Invalid User';
 							}

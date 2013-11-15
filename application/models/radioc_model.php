@@ -25,9 +25,9 @@ class RadioC_Model extends CI_Model {
 		foreach($options->result() as $option) {
 		
 			//Check if option is already present in database to create it
-			if(!in_array(date('Y-m-d H:i:s', strtotime('next ' . $option->value)), $games_dates)) {
+			if(!in_array(date('Y-m-d H:i:s', strtotime($option->value)), $games_dates)) {
 				$data = array(
-					'date' => date('Y-m-d H:i:s', strtotime('next ' . $option->value))
+					'date' => date('Y-m-d H:i:s', strtotime($option->value))
 				);
 				$this->db->insert('games', $data);
 			}
@@ -41,7 +41,7 @@ class RadioC_Model extends CI_Model {
 	//Returns the number of presences in reference to a single game
 	function get_presence_number($id = -1) {
 		if($id == -1) return FALSE;
-		$query = $this->db->query('SELECT COUNT(*) FROM `presence` WHERE `id_game` = ' . $id);
+		$query = $this->db->query('SELECT COUNT(*) FROM `' . $this->db->dbprefix('presence') . '` WHERE `id_game` = ' . $id);
 		$query = $query->row_array(0);
 		return $query['COUNT(*)'];
 	}
@@ -158,7 +158,7 @@ class RadioC_Model extends CI_Model {
 	//Return all presences from user older than now
 	function get_actual_presences_from_user($user_id = -1) {
 		if($user_id == -1) return FALSE;
-		$query = $this->db->query('SELECT * FROM `presence` WHERE `id_game` IN(SELECT `id` FROM `games` WHERE date > now()) AND `id_user` = ' . $user_id);
+		$query = $this->db->query('SELECT * FROM `' . $this->db->dbprefix('presence') . '` WHERE `id_game` IN(SELECT `id` FROM `' . $this->db->dbprefix('games') . '` WHERE date > now()) AND `id_user` = ' . $user_id);
 		return $query;
 	}
 	
@@ -231,30 +231,6 @@ class RadioC_Model extends CI_Model {
 		);
 		$this->db->insert('presence', $data);
 		return TRUE;
-	}
-	
-		
-	/****************|
-	|*AJAX FUNCTIONS*|
-	|****************/
-	
-	//Get new notifications
-	function get_new_notifications($notif_id) {
-		if($notif_id == -1) throw new Exception('No NOTIFID defined');
-		$this->db->from('notifications');
-		$this->db->where("id > '$notif_id'");
-		$query = $this->db->get();
-		return $query;
-	}
-	
-	function add_new_notification($type = '', $text = '') {
-		if($type == '' || $text == '') throw new Exception('No TYPE or TEXT defined');
-		$data = array(
-			'type' => $type,
-			'text' => $text,
-			'date' => date('d/m \a\s G:i\h')
-		);
-		$this->db->insert('notifications', $data);
 	}
 }
 

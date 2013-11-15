@@ -12,7 +12,7 @@
 			if (!$this->ion_auth->logged_in()) {
 				//Not logged in
 				redirect('login', 'refresh');
-			} elseif (!$this->ion_auth->is_admin()) {
+			} elseif ($this->ion_auth->is_admin()) {
 				//Administrator
 				redirect('dashboard', 'refresh');
 			} else {

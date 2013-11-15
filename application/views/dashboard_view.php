@@ -17,7 +17,7 @@
 		<?php if($available_games->num_rows() == 0): ?>
 			<h2><?php echo $this->lang->line('dashboard_no_games_available'); ?></h2>
 		<?php  else: ?>
-		<?
+		<?php
 			for($i = 0; $i < $available_games->num_rows(); $i++):
 				if($i % 3 === 0):
 				?>
