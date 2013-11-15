@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'radioclu_rdclubw';
-$db['default']['password'] = 'RDCLUBWEB@2013';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'radioclu_radioclu';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'gm_';

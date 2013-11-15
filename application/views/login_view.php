@@ -62,18 +62,17 @@
   <body>
     <div class="container">
 
-      <form method="POST" action="<?php echo base_url('login');?>" class="form-signin">
-        <h2 class="form-signin-heading">Login</h2>
+      <form method="POST" onsubmit="return fixIdentity(this)" action="<?php echo base_url('login');?>" class="form-signin">
+        <h2 class="form-signin-heading">Login <?php echo date('Y-m-d H:i:s:P');?></h2>
 		<p class="text-warning"><?php echo $this->session->flashdata('message');?></p>
 		<p class="text-error"><?php echo $this->session->flashdata('error');?></p>
 		
 		<?php if(form_error('identity') !== '') echo form_error('identity'); ?>
         <input name="identity"type="text" class="input-block-level" placeholder="<?php echo $this->lang->line('login_rid'); ?>">
 
-        <input name="password" type="password" class="input-block-level" value="password" placeholder="<?php echo $this->lang->line('login_password'); ?>">
+		<input name="password" type="hidden" value="password">
 		
-        <button class="btn btn-large btn-primary" type="submit"><?php echo $this->lang->line('login_signin'); ?></button>
-        <a href="<?php echo base_url() ?>register"><button style="margin-left:30px;" type="button" class="btn btn-large btn-success"><?php echo $this->lang->line('login_register'); ?></button></a>
+        <button class="btn btn-large btn-primary" type="submit" style="width:100%"><?php echo $this->lang->line('login_signin'); ?></button>
       </form>
 
     </div> <!-- /container -->
@@ -83,6 +82,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url('assets/js/jquery.js');?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.js');?>"></script>
+	<script>
+		function fixIdentity(form) {
+			while(form.identity.value.length < 7) {
+				form.identity.value = '0' + form.identity.value;
+			}
+			return true;
+		}
+	</script>
 
   </body>
 </html>
