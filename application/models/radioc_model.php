@@ -26,10 +26,12 @@ class RadioC_Model extends CI_Model {
 		
 			//Check if option is already present in database to create it
 			if(!in_array(date('Y-m-d H:i:s', strtotime($option->value)), $games_dates)) {
-				$data = array(
-					'date' => date('Y-m-d H:i:s', strtotime($option->value))
-				);
-				$this->db->insert('games', $data);
+				if(strtotime($option->value) < time() + 24 * 60 * 60 ) {
+					$data = array(
+						'date' => date('Y-m-d H:i:s', strtotime($option->value))
+					);
+					$this->db->insert('games', $data);
+				}
 			}
 		}
     }

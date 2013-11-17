@@ -14,7 +14,7 @@ $lang['general_minutes']   = 'Minutos';
 $lang['general_save']      = 'Salvar';
 $lang['general_cancel']    = 'Cancelar';
 $lang['general_remove']    = 'Remover';
-$lang['general_footer']    = 'H- powered by CodeIgniter & Twitter Boostrap';
+$lang['general_footer']    = 'H - powered by CodeIgniter & Twitter Boostrap';
 //Header
 $lang['header_index']         = 'Início';
 $lang['header_presences']     = 'Presenças';
@@ -43,8 +43,8 @@ $lang['control_panel_game_added']   = 'Jogo adicionado com sucesso';
 $lang['control_panel_game_exists']  = 'Jogo já foi adicionado';
 $lang['control_panel_game_removed'] = 'Jogo removido';
 $lang['control_panel_no_games']     = 'Nao há jogos programados';
-$lang['control_panel_game_list']    = 'Lista de jogos';
-$lang['control_panel_add_games']    = 'Adicionar novos jogos';
+$lang['control_panel_game_list']    = 'Programação automática';
+$lang['control_panel_add_games']    = 'Adicionar um jogo na programação automática';
 //Presence Controller-View
 $lang['presence_added']         = 'Presença adicionada';
 $lang['presence_exists']        = 'Voce já está presente neste jogo';
