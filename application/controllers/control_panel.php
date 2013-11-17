@@ -36,11 +36,11 @@
 				$this->db->insert('options', $data);
 
 				$this->session->set_flashdata('message', $this->lang->line('control_panel_game_added'));
-				redirect(base_url('control_panel/list_games'));
+				redirect(base_url('control_panel'));
 			} else {
 				//Option is already in database
 				$this->session->set_flashdata('message', $this->lang->line('control_panel_game_exists'));
-				redirect(base_url('control_panel/list_games'));
+				redirect(base_url('control_panel'));
 			}
 		}
 
@@ -54,7 +54,7 @@
 
 			$this->db->delete('options', array('id' => $id));
 			$this->session->set_flashdata('message', $this->lang->line('control_panel_game_removed'));
-			redirect(base_url('control_panel/list_games'));
+			redirect(base_url('control_panel'));
 		}
 
 		public function list_games() {

@@ -29,6 +29,24 @@
 	</script>
 	
 	<div class="container">
+	
+		<!-- Notifications -->
+		
+		<?php if($this->session->flashdata('message') != ''): ?>
+		<div class="alert fade in">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<?php echo $this->session->flashdata('message'); ?>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->session->flashdata('error') != ''): ?>
+		<div class="alert alert-error fade in">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<?php echo $this->session->flashdata('error'); ?>
+		</div>
+		<?php endif; ?>
+		
+		<!-- End notifications -->
 
       <!-- Form for adding new games -->
 	  
@@ -66,20 +84,6 @@
 		
 		<!-- End form for adding games -->
 		<!-- List programmed games -->
-		
-		<?php if($this->session->flashdata('message') != ''): ?>
-		<div class="alert fade in">
-			<button type="button" class="close" data-dismiss="alert">×</button>
-			<?php echo $this->session->flashdata('message'); ?>
-		</div>
-		<?php endif; ?>
-		
-		<?php if($this->session->flashdata('error') != ''): ?>
-		<div class="alert alert-error fade in">
-			<button type="button" class="close" data-dismiss="alert">×</button>
-			<?php echo $this->session->flashdata('error'); ?>
-		</div>
-		<?php endif; ?>
 		
 		<?php if($options->num_rows() == 0):?>
 		<h2><?php echo $this->lang->line('control_panel_no_games'); ?></h2>

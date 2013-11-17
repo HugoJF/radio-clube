@@ -58,15 +58,12 @@
 				<?php if($this->ion_auth->logged_in()): ?><li><a href="<?php echo base_url();?>dashboard/"               ><?php echo $this->lang->line('header_index'); ?>         </a></li><?php endif; ?>
 				<?php if($this->ion_auth->logged_in()): ?><li><a href="<?php echo base_url();?>presence/"                ><?php echo $this->lang->line('header_presences'); ?>     </a></li><?php endif; ?>
 				<?php if($this->ion_auth->is_admin()):  ?><li><a href="<?php echo base_url();?>control_panel/"           ><?php echo $this->lang->line('header_control_panel'); ?> </a></li><?php endif; ?>
-				<?php if($this->ion_auth->is_admin()):  ?><li><a href="<?php echo base_url();?>control_panel/list_games/"><?php echo $this->lang->line('header_list_games'); ?>    </a></li><?php endif; ?>
-				<?php if($this->ion_auth->logged_in()): ?><li><a href="#"                                                ><?php echo $this->lang->line('header_contact'); ?>       </a></li><?php endif; ?>			              
 				<?php if($this->ion_auth->logged_in()): ?><li><a href="<?php echo base_url();?>logout/"                  ><?php echo $this->lang->line('header_logout'); ?>        </a></li><?php endif; ?>
               
             </ul>
             <div class="navbar-form pull-right">
               <ul class="nav">
 				<li><a href="#"><strong><?php if(isset($the_user->username)) echo $the_user->first_name . ' ' . $the_user->last_name . ' (' . $the_user->username . ')'; ?></strong></a></li>
-				 <?php if($this->ion_auth->logged_in()): ?><li><form style="margin:0px;" action="<?php echo base_url() ?>logout/"><button type="submit" class="btn">Logout</button></form></li><?php endif; ?>
 			  </ul>
             </div>
           </div><!--/.nav-collapse -->
