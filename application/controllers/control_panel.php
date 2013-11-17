@@ -6,10 +6,13 @@
 		public function index() {
 			//Verify if User can access this controller
 			verify_access(1);
+			
+			//Retrieve programmed game options
+			$options = $this->db->get_where('options', array('name' => 'game_date'));
 
 			//Load page to add more options
 			$this->load->view('header');
-			$this->load->view('control_panel_view');
+			$this->load->view('control_panel_view', array('options' => $options));
 			$this->load->view('footer');
 		}
 
